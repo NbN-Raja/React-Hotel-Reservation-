@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import PropTypes from 'prop-types';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const url = "https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/auth/signin"
 
@@ -22,6 +22,9 @@ async function LoginUser(credentials) {
 
 export default function Mod( {}) {
   const navigate = useNavigate();
+  const params = useParams();
+
+
 const [username, setUsername] = useState('');
 const [password, setPassword] = useState('');
 
@@ -38,14 +41,20 @@ const handleSubmit = async e => {
   localStorage.setItem("accessToken",session.accessToken)
   localStorage.setItem("email",session.email)
   localStorage.setItem("username",session.username)
-  navigate("/mod/home")
+  localStorage.setItem("id",session.id)
+  navigate(`/moderator/profile/`)
 
 }
 
 const logout = () => {
-  localStorage.removeItem('accessToken','email','username');
+  localStorage.removeItem('accessToken',);
+  localStorage.removeItem('username',);
+  localStorage.removeItem('email',);
+  localStorage.removeItem('id',);
  
 };
+
+
 
   return (
     <>
@@ -86,20 +95,14 @@ const logout = () => {
               Forget Password?
             </a>
             <div className="mt-6">
-              <button  type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+              <button  type='submit'  className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
                 Login
               </button>
              <input type="submit" onClick={logout} value="Submit" />
             </div>
           </form>
 
-          <p className="mt-8 text-xs font-light text-center text-gray-700">
-            {" "}
-            Don't have an account?{" "}
-            <a href="#" className="font-medium text-purple-600 hover:underline">
-              Sign up
-            </a>
-          </p>
+          
         </div>
       </div>
     </>

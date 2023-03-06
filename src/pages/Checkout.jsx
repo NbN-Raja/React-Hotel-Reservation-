@@ -4,10 +4,10 @@ import axios from "axios";
 
 import { Link, useParams } from "react-router-dom";
 
-export default function Rooms() {
+export default function Checkout() {
   const params = useParams();
   const [rooms, setRooms] = React.useState(null);
-  const baseURL = `http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/rooms/getbyid/${params.id}`;
+  const baseURL = `http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/rooms/checkout/${params.id}`;
 
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
@@ -24,7 +24,7 @@ export default function Rooms() {
         <div className="text-center pb-10">
           <h1 className="text-5xl font-serif text-dark">
             {" "}
-            List of Hotels Rooms Here here
+            Check Out
           </h1>
         </div>
       </div>
@@ -36,7 +36,7 @@ export default function Rooms() {
               <Link to={`/checkout/${room._id}`}>
                 <div className="container flex flex-row justify-center mb-10 shadow-lg ml-10">
                   <div className=" w-96 mr-10">
-                    {/* <img className="" src={image} alt="image" /> */}
+                    <img className="" src={image} alt="image" />
                   </div>
                   <div key={room.id} className="mr-40">
                     <h1 className=" bg-blue-gray-300 mt-10 w-full p-1 mb-3 text-white ">
@@ -51,16 +51,22 @@ export default function Rooms() {
                     <h1 className="p-2 text-sm w-auto">
                       {" "}
                       {room.Room_amenities}{" "}
-                    </h1>
-                  </div>
-                  <div className="w-96 p-2 mt-8">
-                    <h1 className="p-2 text-2xl text-deep-orange-900">
+                      <h1 className="p-2 text-2xl text-deep-orange-900">
                       {" "}
                       RS: {room.Room_price}{" "}
                     </h1>
-                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                      CheckOut
+                    </h1>
+                  </div>
+                  <div className="w-96 p-4 mt-8">
+                    
+                    <button class=" mt-10 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                      Pay Now 
                     </button>
+                    <div className="">
+                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                      Book Hotel 
+                    </button>
+                    </div>
                   </div>
                 </div>
               </Link>

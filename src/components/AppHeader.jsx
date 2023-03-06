@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 import {
   Menu,
   MenuHandler,
@@ -8,8 +9,15 @@ import {
   Button,
 } from "@material-tailwind/react";
 
+
 export default function AppHeader() {
+  const [dropdown, setDropDown]=useState(false)
   const [isLoggedin, setIsLoggedin] = useState(false);
+
+  useEffect(() => {
+    
+  }, [isLoggedin])
+  
 
   const logout = () => {
     localStorage.removeItem("accessToken");
@@ -46,25 +54,49 @@ export default function AppHeader() {
             <Link to="/" className="mr-10 hover:text-gray-900 text-xl ">
               Home
             </Link>
-            <Link to="/about" className="mr-10 text-xl ">
-              About
+            <Link to="/about" className="mr-10 text-xl relative">
+              <span className="peer">About </span>
+              <div className="hover:opacity-100 hover:visible peer-hover:opacity-100 peer-hover:visible opacity-0 invisible absolute -left-3 top-[18px] w-60  bg-blue-300 p-4  z-30 text-white   h-32">
+                <ul className="">
+                <li > <Link to ="/profile">Profile </Link> </li>
+                <li > <Link to ="/contact">Setting </Link> </li>
+                   <li> Logout</li>
+                </ul>
+
+              </div>
+            </Link>
+            <Link to="/hotels" className="mr-10 text-xl ">
+              Hotels
             </Link>
             <Link to="/contact" className="mr-10 text-xl ">
               Contact
             </Link>
             <Menu>
+
            
             {localStorage.getItem("accessToken")? (
             <>
             
               <MenuHandler>
             <Button variant="gradient" >  {localStorage.getItem("username")}</Button>
-          </MenuHandler>
+           </MenuHandler>
              <MenuList>
                <MenuItem> <Link to="/profile"> Profile</Link></MenuItem>
                <MenuItem> <Link to="/settings"> Settings</Link> </MenuItem>
                <MenuItem onClickCapture={logout}>  Logout</MenuItem>
              </MenuList>
+              {/* <Link to="/login" className="mr-10 text-xl relative">
+              <span className="peer">About </span>
+              <div className="hover:opacity-100 hover:visible peer-hover:opacity-100 peer-hover:visible opacity-0 invisible absolute -left-3 top-[18px] w-60  bg-blue-300 p-4  z-30 text-white   h-32">
+                <ul className="">
+                <li > <Link to ="/profile">Profile </Link> </li>
+                <li > <Link to ="/contact">Setting </Link> </li>
+                   <li> Logout</li>
+                </ul>
+
+              </div>
+            </Link> */}
+
              </>
              
                      ) : (
@@ -72,6 +104,14 @@ export default function AppHeader() {
                       )}
                      
             </Menu>
+            {/* <div className="mr-10 text-xl flex relative">
+              <span onMouseEnter={()=>setDropDown(true) } onMouseLeave={()=>setDropDown(false)}>Contact</span>
+              <div className={`z-30 absolute top-10 h-0 w-40 opacity-0 bg-red-400 text-white transition-all duration-500 ${dropdown && 'h-30 opacity-100 h-30'}`}>
+                  <li><a href="">Home</a></li>
+                  <li><a href="">Contact Us</a></li>
+                  <li><a href="">Register</a></li>
+              </div>
+            </div> */}
           </nav>
         </div>
       </header>
