@@ -23,6 +23,7 @@ import ModHotels from "./pages/dashboards/hotels";
 import Createhotels from "./pages/dashboards/Createhotels";
 import Hotels from "./pages/Hotels";
 import Modrooms from "./pages/dashboards/modrooms";
+import Updatehotels from "./pages/dashboards/Updatehotels";
 
 
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/moderator/hotels/" element={<ModHotels />} />
           <Route path="/moderator/create/" element={<Createhotels />} />
           <Route path="/moderator/rooms/:id" element={<Modrooms />} />
+          <Route path="/moderator/update/:id" element={<Updatehotels />} />
 
           <Route path="/admin" element={<Admin/>} />
          

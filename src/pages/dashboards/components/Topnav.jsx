@@ -18,17 +18,18 @@ async function Searchbyname(credentials) {
  export  function Topnav(){
 
   const [Hotel_name, setHotel_name] = useState('');
-  
+  const [search, setSearch] = useState('');
+
  
  
-  const handleSubmit = async e => {
-   e.preventDefault();
+  // const handleSubmit = async e => {
+  //  e.preventDefault();
    
-   const session = await Searchbyname({
-    Hotel_name,
+  //  const session = await Searchbyname({
+  //   Hotel_name,
      
-   });
-  }
+  //  });
+  // }
 
 
 
@@ -55,7 +56,7 @@ async function Searchbyname(credentials) {
         
         <div className=" p-5 flex flex-row  shadow-2xl bg-slate-400 ">
             <div className="w-96">
-              <form action=" " onSubmit={handleSubmit}>
+              <form>
               <input
                 className="m-0 w-96 h-10 rounded border-2 placeholder:text-gray-500 placeholder:text-1xl placeholder:pl-5 placeholder:text-lg"
                 type="search"  onChange={e => setHotel_name(e.target.value)}

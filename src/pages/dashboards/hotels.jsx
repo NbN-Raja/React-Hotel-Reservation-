@@ -1,9 +1,9 @@
 import axios from "axios";
 import { GrNotification } from "react-icons/gr";
 import { Dash, Sidenav, Table } from "./components/sidenav";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // import image from "../images/home.jpg";
-
+import image from "../../images/home.jpg";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { Topnav } from "./components/Topnav";
 
@@ -11,6 +11,7 @@ import { Topnav } from "./components/Topnav";
 
 export default function ModHotels() {
   const [hotels, setHotels] = React.useState(null);
+  const [search, setSearch] = useState('');
   const params = useParams();
 
   // const id = localStorage.getItem("id");
@@ -42,6 +43,8 @@ if (id) {
     });
   }, []);
 
+
+
   return (
     <>
 
@@ -67,15 +70,15 @@ if (id) {
               {" "}
               List of Hotels{" "}
             </h1>
-            {hotels &&
+            {hotels&&
           hotels.map((hotel) => {
             return (
-              <div className="container bg-gray-300 rounded bg-blue-gray-50 shadow-lg ">
+              <div className="container  border mt-5 bg-gray-300 flex flex-col  rounded bg-blue-gray-50 shadow-lg ">
                 <Link to={`/moderator/rooms/${hotel._id}`}>
-                  <div className="flex flex-col justify-center mb-10">
-                    <div className="w-96 items-center flex">
-                      {/* <img className="mr-24" src={image} alt="image" /> */}
-                      <div className="w-96">
+                  <div className=" mb-10">
+                    <div className=" items-center flex">
+                      <img className="mr-24 w-96" src={image} alt="image" />
+                      <div className="w-[300px]">
                         <h1 className=" bg-blue-gray-200 inline-block w-full p-1 mb-3 text-white ">
                           {" "}
                           APARTMENT{" "}
@@ -97,13 +100,15 @@ if (id) {
                           <h1 className="p-1 text-sm"> {hotel.Hotel_phone} </h1>
                         </div>
                       </div>
-                      <div key={hotel.id} className="mr-50 w-full"></div>
+                      
                     </div>
-                    {/* <div className="w-96 p-2 mt-8">
-                        
-                      </div> */}
+                    
                   </div>
                 </Link>
+                <div key={hotel.id} className="mr-50 w-40 mb-10 ml-[480px] bg-blue-gray-400">
+                        <button className="p-2 hover:bg-white ">  <Link to={`/moderator/update/${hotel._id}`}>Update </Link> </button>
+                        <button className="p-2 hover:bg-white"> Delete </button>
+                      </div>
               </div>
             );
           })}

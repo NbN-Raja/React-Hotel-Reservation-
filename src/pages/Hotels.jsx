@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const baseURL =
-  "https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels";
+  "http://localhost:8080/api/hotels";
 
 export default function Hotels() {
   const [hotels, setHotels] = React.useState(null);

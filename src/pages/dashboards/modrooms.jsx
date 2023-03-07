@@ -8,6 +8,7 @@ import image from "../../images/home.jpg";
 export default function Modrooms(){
     const params = useParams();
     const [rooms, setRooms] = React.useState(null);
+    
     const baseURL = `http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/rooms/getbyid/${params.id}`;
   
     React.useEffect(() => {

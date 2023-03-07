@@ -8,6 +8,7 @@ export function Sidenav() {
         <li className="p-2 font-dashboard text-2xl shadow-sm "> Dashboard</li>
         <li className="p-2 font-dashboard text-2xl shadow-sm"> <Link to="/moderator/hotels"> Hotels</Link>   </li>
         <li className="p-2 font-dashboard text-2xl shadow-sm"> <Link to="/moderator/create/"> Add Hotel </Link> </li>
+        <li className="p-2 font-dashboard text-2xl shadow-sm"> <Link to="/moderator/create/"> Restore Hotels </Link> </li>
         <li className="p-2 font-dashboard text-2xl shadow-sm"> Get All</li>
       </ul>
     </>

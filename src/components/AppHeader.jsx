@@ -21,6 +21,15 @@ export default function AppHeader() {
 
   const logout = () => {
     localStorage.removeItem("accessToken");
+    localStorage.removeItem("firstname");
+    localStorage.removeItem("gender");
+    localStorage.removeItem("id");
+    localStorage.removeItem("address");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    localStorage.removeItem("lastname");
+    localStorage.removeItem("phone");
+    localStorage.removeItem("provider");
     setIsLoggedin(false);
   };
 
@@ -83,7 +92,7 @@ export default function AppHeader() {
              <MenuList>
                <MenuItem> <Link to="/profile"> Profile</Link></MenuItem>
                <MenuItem> <Link to="/settings"> Settings</Link> </MenuItem>
-               <MenuItem onClickCapture={logout}>  Logout</MenuItem>
+               <MenuItem onClick={logout}>  Logout</MenuItem>
              </MenuList>
               {/* <Link to="/login" className="mr-10 text-xl relative">
               <span className="peer">About </span>
