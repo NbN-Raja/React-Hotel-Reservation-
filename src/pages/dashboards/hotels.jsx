@@ -23,7 +23,7 @@ console.log(id);
 
 let baseURL = "";
 if (id) {
-  baseURL = `http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels/mod/${id}`;
+  baseURL = `https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels/mod/${id}`;
 } else {
   console.error("ID not found in localStorage");
 }

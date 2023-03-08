@@ -29,7 +29,7 @@ export default function Createhotels() {
 
 
   async function CreateUser(credentials) {
-    return fetch(`http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels/create/${id}`, {
+    return fetch(`https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels/create/${id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -45,7 +45,7 @@ React.useEffect(() => {
 
 
   async function Updatehotels(credentials) {
-    return fetch(`http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels/${params.id}`, {
+    return fetch(`https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels/${params.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
