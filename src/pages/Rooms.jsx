@@ -9,6 +9,9 @@ export default function Rooms() {
   const [rooms, setRooms] = React.useState(null);
   const baseURL = `http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/rooms/getbyid/${params.id}`;
 
+
+
+
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
       setRooms(response.data);
@@ -24,7 +27,7 @@ export default function Rooms() {
         <div className="text-center pb-10">
           <h1 className="text-5xl font-serif text-dark">
             {" "}
-            List of Hotels Rooms Here here
+            List of Hotels Rooms Here here 
           </h1>
         </div>
       </div>
