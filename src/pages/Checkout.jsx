@@ -21,7 +21,7 @@ async function ReserverHOtels(credentials) {
 export default function Checkout() {
   const params = useParams();
   const [rooms, setRooms] = React.useState(null);
-  const baseURL = `http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/rooms/checkout/${params.id}`;
+  const baseURL = `https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/rooms/checkout/${params.id}`;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, seFirstname] = useState("");
