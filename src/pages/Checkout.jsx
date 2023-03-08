@@ -7,7 +7,7 @@ import { Book } from "../components/book";
 
 async function ReserverHOtels(credentials) {
   return fetch(
-    "http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotelres/",
+    "https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotelres/",
     {
       method: "POST",
       headers: {

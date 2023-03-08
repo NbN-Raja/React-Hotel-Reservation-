@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 async function LoginUser(credentials) {
 
 
-  return fetch('http://localhost:8080/api/auth/signin', {
+  return fetch('https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/auth/signin', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

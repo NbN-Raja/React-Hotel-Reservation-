@@ -8,7 +8,7 @@ import {Search,TopHotels} from "../components/Search";
 
 
 const baseURL =
-  "http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels";
+  "https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels";
 
 export default function Home() {
   

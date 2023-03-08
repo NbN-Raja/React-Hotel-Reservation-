@@ -11,7 +11,7 @@ import axios from "axios";
 export function Search() {
 
   const baseURL =
-  "http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels";
+  "https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels";
 
   const [hotels, setHotels] = React.useState(null);
 
@@ -23,7 +23,7 @@ export function Search() {
 
 
   async function LoginUser(credentials) {
-    return fetch("http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels", {
+    return fetch("https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/hotels", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

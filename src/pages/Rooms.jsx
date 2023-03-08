@@ -7,7 +7,7 @@ import { Link, useParams } from "react-router-dom";
 export default function Rooms() {
   const params = useParams();
   const [rooms, setRooms] = React.useState(null);
-  const baseURL = `http://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/rooms/getbyid/${params.id}`;
+  const baseURL = `https://nbn-hotel-reservation-backend.clouds.nepalicloud.com/api/rooms/getbyid/${params.id}`;
 
 
 
