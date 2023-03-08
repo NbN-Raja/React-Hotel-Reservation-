@@ -116,7 +116,7 @@ export default function Checkout() {
                       </div>
                       <div className="">
                         lastname{" "}
-                        <input type="hidden"  onChange={e => setLastname(e.target.value)} value={llastname} />
+                        <input type="text"  onChange={e => setLastname(e.target.value)} value={llastname} />
                       </div>
                       <div className="">
                         email <input type="text" onChange={e => setEmail(e.target.value)} value={lemail} />
@@ -133,7 +133,7 @@ export default function Checkout() {
 
                       <div className="">
                         Hotel_id{" "}
-                        <input type="text" onChange={e => setHotelid(e.target.value)} value={room.hotel_id} />
+                        <input type="hidden" onChange={e => setHotelid(e.target.value)} value={room.hotel_id} />
                       </div>
                       <div className="">
                         Room_price{" "}
